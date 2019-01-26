@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>模板渲染</title>
+<script type="text/javascript" src="home.js"></script>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<script type="text/javascript">
+window.onload = function()
+{
+	//alert("***hellowrold***");
+}
+</script>
+</head>
+<body>
+<p th:text="${member.mid}"></p>
+<p th:text="${member.age}"></p>
+<p th:text="${member.salary}"></p>
+<p th:text="${#dates.format(member.birthday,'yyyy-MM-dd')}"></p>
+</body>
+</html>

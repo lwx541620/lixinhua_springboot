@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.imooc.logo.dao.IDeptDAO">
+	<select id="findAll"  resultType="Dept">
+		SELECT deptno,dname
+		FROM dept
+	</select>
+	
+	<insert id="doCreate" parameterType="Dept">
+	  insert into dept(dname) values(#{dname})
+	</insert>
+</mapper>  

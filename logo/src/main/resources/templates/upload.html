@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>模板渲染</title>
+<script type="text/javascript" src="home.js"></script>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<p th:text="${hello}+(1+1)"></p>
+<form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+ <input type="text" name="name"/><br/>
+ <input type="file" name="photo"/><br/>
+ <input type="file" name="photo"/><br/>
+ <input type="file" name="photo"/><br/>
+ <input type="file" name="photo"/><br/>
+ <input type="submit" value="提交"/>
+ <input type="reset" value="重置"/>
+</form>
+</body>
+</html>

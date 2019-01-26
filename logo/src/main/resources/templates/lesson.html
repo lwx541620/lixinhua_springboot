@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>模板渲染</title>
+<script type="text/javascript" src="home.js"></script>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<script type="text/javascript">
+window.onload = function()
+{
+	//alert("***hellowrold***");
+}
+</script>
+</head>
+<body>
+<p th:text="${hello}+(1+1)"></p>
+<p th:utext="${name}"></p>
+<p th:text="#{welcome.url}"></p>
+<p th:text="#{welcome.nihao('laoshi')}"></p>
+</body>
+</html>
