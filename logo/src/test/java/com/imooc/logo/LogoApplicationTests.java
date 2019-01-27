@@ -1,6 +1,8 @@
 package com.imooc.logo;
 
 import java.sql.SQLException;
+
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -30,6 +33,10 @@ public class LogoApplicationTests
 	
 	@Autowired
 	private JavaMailSender mailSender;
+	
+	@Resource(name="redistwo")
+	private RedisTemplate<String,Object> redisTemplate;
+	
 	@Test
 	public void contextLoads()
 	{
@@ -52,15 +59,30 @@ public class LogoApplicationTests
 	 * @Test public void test55() { producerService.sendMessage("hello wrold"); }
 	 */
 	
+	/*
+	 * @Test public void test66() { SimpleMailMessage message=new
+	 * SimpleMailMessage(); message.setFrom("568623537@qq.com");
+	 * message.setTo("fclixiang@sina.com"); message.setSubject("测试邮件");
+	 * message.setText("好好学习，天天向上"); mailSender.send(message); }
+	 */
+	
 	@Test
-	public void test66() 
+	public void test88() 
 	{
-		SimpleMailMessage message=new SimpleMailMessage();
-		message.setFrom("568623537@qq.com");
-		message.setTo("fclixiang@sina.com");
-		message.setSubject("测试邮件");
-		message.setText("好好学习，天天向上");
-		mailSender.send(message);
+		
+		redisTemplate.opsForValue().set("hello", "world");
+		Object val=redisTemplate.opsForValue().get("hello");
+		System.out.println("1111111111111111"+val);
+	}
+	
+	@Test
+	public void test99() 
+	{
+		Dept dept=new Dept();
+		dept.setDname("nihao");
+		redisTemplate.opsForValue().set("hello", dept);
+		Object val=redisTemplate.opsForValue().get("hello");
+		System.out.println("1111111111111111"+val);
 	}
 	
 }
