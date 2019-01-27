@@ -48,8 +48,8 @@ public class RedisTwoConfig
 	{
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
         redisStandaloneConfiguration.setHostName(hostName);
-		 redisStandaloneConfiguration.setPort(port);
-		 redisStandaloneConfiguration.setDatabase(database);
+		redisStandaloneConfiguration.setPort(port);
+		redisStandaloneConfiguration.setDatabase(database);
         return new JedisConnectionFactory(redisStandaloneConfiguration);
     }
 	
